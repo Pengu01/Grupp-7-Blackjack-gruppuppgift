@@ -3,7 +3,7 @@ using System.Collections.Generic;
 /*
 Class deck kommer ha metoderna draw, deckAdd och deckRemove. gör så att man kan resetta decken enkelt och dra kort som man vill
 */
-namespace BlackJackGame
+
 {
     class Program
     {
