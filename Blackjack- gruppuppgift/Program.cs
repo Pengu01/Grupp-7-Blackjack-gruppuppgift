@@ -84,6 +84,28 @@ Class deck kommer ha metoderna draw, deckAdd och deckRemove. gör så att man ka
                 cards.Add(ess);
             }
         }
+           
+// När man väljer om Ess ska vara 1 eller 11
+string Ess;
+
+if (Console.ReadLine(Ess))
+{
+    Console.WriteLine("Vill du Ess ska vara 1 eller 11?");
+    if (Console.ReadLine("1"))
+    {
+    //read string Ess sedan tar den och convert till int och tar Ess och då blir Essets värde 1
+        Convert.ToInt32(string Ess);
+        int Ess = 1;
+    }
+    else if (Console.ReadLine("11"))
+    {
+        Convert.ToInt32(string Ess);
+        int Ess = 11;
+    }
+    Console.WriteLine(Ess)
+}
+//B
+
     }
 }
 
