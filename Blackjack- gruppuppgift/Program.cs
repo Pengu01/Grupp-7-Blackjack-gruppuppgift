@@ -94,22 +94,19 @@ Class deck kommer ha metoderna draw, deckAdd och deckRemove. gör så att man ka
             const int GROUP_SIZE = 4;
             const int GROUP_AMOUNT = 8;
 
-            string[] studentArray =
+           string[] cardArray =
              {
-             "Abdalaziz", "Johannes", "Eliyah", "Ebba", "Ossian", "Adam",
-             "Gabriel", "Ahmad", "Mukhtar", "Hugo", "Yayhe", "Alexander",
-             "Theo", "Albin", "John", "Leo", "Benjamin", "Erik", "Omar",
-             "Ajob", "Emil", "Jim", "Viggo", "Hassan", "Abd", "Noah",
-             "Sebastian", "Alfons", "Romeo", "Annie", "Gvidas", "Samir"
+             2♥, 2♦, 2♠, 2♣, 3♥, 3♦, 3♠, 3♣, 4♥, 4♦, 4♠, 4♣, 5♥, 5♦, 5♠, 5♣, 6♥, 6♦, 6♠, 6♣, 7♥, 7♦, 7♠, 7♣, 8♥, 8♦, 8♠, 8♣, 9♥, 9♦, 9♠, 9♣, 10♥, 10♦, 10♠, 10♣, Knekt♥, Knekt♦, Knekt♠, Knekt♣, Dam♥, Dam♦, Dam♠, Dam♣, Kung♥, Kung♦, Kung♠, Kung♣, Ess♥, Ess♦, Ess♠, Ess♣
             };
-            List<string> students = new List<string>();
 
-            for (int i = 0; i < studentArray.Length; i++)
+            List<string> cards = new List<string>();
+
+            for (int i = 0; i < cardArray Length; i++)
             {
-                students.Add(studentArray[i]);
+                cards.Add(cardArray[i]);
 
             }
-            Console.WriteLine("antal elever i listan " + students.Count);
+          
 
             Random random = new Random();
             
@@ -121,14 +118,14 @@ Class deck kommer ha metoderna draw, deckAdd och deckRemove. gör så att man ka
                 {
                     if (students.Count == 0)
                     {
-                        Console.WriteLine("Alla elever har fått en grupp");
+                        Console.WriteLine("finns inga kort kvar");
                         break;
 
                     }
-                    int localValue = random.Next(0, students.Count);
-                    Console.WriteLine(students[localValue]);
+                    int localValue = random.Next(0, cards.Count);
+                    Console.WriteLine(cards[localValue]);
 
-                    students.RemoveAt(localValue);
+                    cards.RemoveAt(localValue);
 
                 }
                 Console.Write("\n");
