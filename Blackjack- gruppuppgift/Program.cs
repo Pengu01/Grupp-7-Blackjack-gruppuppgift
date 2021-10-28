@@ -1,34 +1,49 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Blackjack__gruppuppgift
-
+{
     class Program
     {
         static void Main(string[] args)
         {
+            playercard player = new playercard();
+            dealer dealer = new dealer();
             int ess;
             Console.WriteLine("Hej och välkommen till Black Jack");
             Console.Write("vänligen skriv in vad ess ska vara värt(1 eller 11):");
             ess= Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("bra, ess är nu värt" + ess);
             deck bj = new deck();
-            bj.addEss();
-            bj.deckAdd();
             Console.WriteLine("då kör vi");
-        bool playing = true;
-        while (playing)
-        {
-            
-        }
+            bool playing = true;
+            while (playing)
+            {
+                 bj.deckAdd();
+                 bj.addEss();
+               dealer.dealerdraw();
+                player.playerdraw();
+                 bj.deckRemove
+            }
         }
     }
     
     class playercard
-    {
+    {            
+        deck bj = new deck();
         List<int> player = new List<int>();
-        public void playerdeck()
+        public void playerdraw()
         {
-
+            player.Add(bj.draw());
+        }
+    }
+    class dealer
+    {
+        deck bj = new deck();
+        List<int> dealer = new List<int>();
+        public void dealerdraw()
+        {
+            dealer.Add(bj.draw());
         }
     }
     class deck
