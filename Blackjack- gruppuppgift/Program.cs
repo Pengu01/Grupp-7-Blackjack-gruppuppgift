@@ -24,13 +24,18 @@ namespace BlackJackGame
                 bool drawing = true;
                 while (drawing)
                 {
-                    Console.WriteLine(bj.playerValue());
                     if (!bj.checkPlayer())
                     {
+                        Console.WriteLine(bj.playerValue());
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Bust");
                         break;
                     }
+                    if (bj.playerA())
+                    {
+                        int tempValue = bj.playerValue() - 10;
+                        Console.WriteLine(bj.playerValue() + "/" + tempValue);
+                    } else Console.WriteLine(bj.playerValue());
                     Console.WriteLine("Hit/Stand");
                     string answer = Console.ReadLine();
                     if (answer == "Hit")
@@ -88,19 +93,24 @@ namespace BlackJackGame
             cards.Clear();
             for (int i = 2; i < 12; i++)
             {
-                cards.Add(i);
-                if (i == 10)
+                for(int j = 0; j < 4; j++)
                 {
-                    for (int k = 0; k < 12; k++)
+                    cards.Add(i);
+                    if (i == 10)
                     {
-                        cards.Add(i);
+                        for (int k = 0; k < 3; k++)
+                        {
+                            cards.Add(i);
+                        }
                     }
                 }
             }
         }
         public int deckDraw()
         {
-            return cards[rnd.Next(0, cards.Count)];
+            int value = rnd.Next(0, cards.Count-1);
+            cards.RemoveAt(value);
+            return cards[value];
         }
     }
     class blackjack  : deck
@@ -195,6 +205,10 @@ namespace BlackJackGame
                 return 1;
             }
             else return 2;
+        }
+        public bool playerA()
+        {
+            return player.Contains(11);
         }
     }
 }
