@@ -19,11 +19,10 @@ namespace Blackjack__gruppuppgift
             bool playing = true;
             while (playing)
             {
-                 bj.deckAdd();
-                 bj.addEss();
-               dealer.dealerdraw();
-                player.playerdraw();
-                 bj.deckRemove
+                    bj.deckAdd();
+                    dealer.dealerdraw();
+                    player.playerdraw();
+                    bj.deckRemove();
             }
         }
     }
